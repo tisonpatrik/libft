@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 16:45:34 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/21 18:21:07 by ptison           ###   ########.fr       */
+/*   Created: 2025/05/21 17:37:15 by ptison            #+#    #+#             */
+/*   Updated: 2025/05/21 18:23:25 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(unsigned char c)
+int	ft_isdigit(int i)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if (i >= 48 && i <= 57)
 	{
 		return (1024);
 	}
@@ -31,8 +31,8 @@ int	main(void)
 	int				expected;
 
 	c = 'a';
-	current = ft_isalpha(c);
-	expected = isalpha(c);
+	current = ft_isdigit(c);
+	expected = isdigit(c);
 	assert(current == expected);
 	printf("passed \n");
 	return (0);

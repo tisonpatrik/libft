@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 21:04:54 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/21 21:09:35 by ptison           ###   ########.fr       */
+/*   Created: 2025/05/21 21:12:25 by ptison            #+#    #+#             */
+/*   Updated: 2025/05/21 21:22:13 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(unsigned char i)
+int	ft_strlen(char *str)
 {
-	if (i >= ' ' && i <= '~')
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		return (16384);
+		i++;
 	}
-	return (0);
+	return (i);
 }
 
 /*
 #include <assert.h>
-#include <ctype.h>
 #include <stdio.h>
+#include <string.h>
 
 int	main(void)
 {
-	unsigned char	c;
-	int				current;
-	int				expected;
+	int	expected;
+	int	current;
 
-	c = '\0';
-	current = ft_isprint(c);
-	expected = isprint(c);
-	assert(current == expected);
-	c = 'a';
-	current = ft_isprint(c);
-	expected = isprint(c);
-	assert(current == expected);
+	char* str = "pico";
+	expected = strlen(str);
+	current = ft_strlen(str);
+	assert(expected == current);
 	printf("passed \n");
 	return (0);
 }
+
 */

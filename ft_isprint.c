@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 17:37:15 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/21 21:04:21 by ptison           ###   ########.fr       */
+/*   Created: 2025/05/21 21:04:54 by ptison            #+#    #+#             */
+/*   Updated: 2025/05/21 21:08:36 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(unsigned char i)
+
+int	ft_isprint(unsigned char i)
 {
-	if (i >= '0' && i <= '9')
+	if (i >= ' ' && i <= '~')
 	{
-		return (2048);
+		return (16384);
 	}
 	return (0);
 }
@@ -30,13 +31,13 @@ int	main(void)
 	int				current;
 	int				expected;
 
-	c = '8';
-	current = ft_isdigit(c);
-	expected = isdigit(c);
+	c = '\0';
+	current = ft_isprint(c);
+	expected = isprint(c);
 	assert(current == expected);
 	c = 'a';
-	current = ft_isdigit(c);
-	expected = isdigit(c);
+	current = ft_isprint(c);
+	expected = isprint(c);
 	assert(current == expected);
 	printf("passed \n");
 	return (0);

@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 21:24:11 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/21 21:53:42 by ptison           ###   ########.fr       */
+/*   Created: 2025/05/23 11:42:23 by ptison            #+#    #+#             */
+/*   Updated: 2025/05/23 11:42:44 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <strings.h>
 
-void	*ft_memset(void *str, int c, size_t n)
+void	*ft_bzero(void *str, size_t n)
 {
 	unsigned char	*s;
 	size_t			i;
@@ -21,12 +22,11 @@ void	*ft_memset(void *str, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		s[i] = (unsigned char)c;
+		s[i] = '\0';
 		i++;
 	}
 	return (str);
 }
-
 /*
 #include <assert.h>
 #include <stdio.h>
@@ -35,22 +35,28 @@ void	*ft_memset(void *str, int c, size_t n)
 int	main(void)
 {
 	int		i;
-	char	c;
 	char	*str;
 	char	expected[50];
 	char	current[50];
 
-	i = 5;
-	c = '&';
+	i = 1;
 	str = "Hello from the other side.";
+	
 	strcpy(expected, str);
-	memset(expected, c, i);
+	bzero(expected, i);
 	
 	strcpy(current, str);
-	ft_memset(current, c, i);
+	ft_bzero(current, i);
 	
-	printf("e: %s \n", expected);
-	printf("c: %s \n", current);
+
+	for (int j = 0; j < (int)strlen(str); j++)
+		printf("%c", (unsigned char)expected[j]);
+	printf("\n");
+	
+	for (int j = 0; j < (int)strlen(str); j++)
+		printf("%c", (unsigned char)current[j]);
+	printf("\n");
+
 	assert(strcmp(current, expected) == 0);
 	return (0);
 }

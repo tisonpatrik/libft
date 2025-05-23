@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/23 12:16:35 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/23 13:27:37 by ptison           ###   ########.fr       */
+/*   Created: 2025/05/23 13:22:24 by ptison            #+#    #+#             */
+/*   Updated: 2025/05/23 13:29:30 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t				i;
 	unsigned char		*d;
 	const unsigned char	*s = (const unsigned char *)src;
+	size_t				i;
 
 	i = 0;
 	d = (unsigned char *)dest;
-	while (i < n)
+	if (d == s || n == 0)
+		return (dest);
+	if (d < s)
 	{
-		d[i] = s[i];
-		i++;
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	else
+	{
+		while (n--)
+			d[n] = s[n];
 	}
 	return (dest);
 }
@@ -35,19 +45,14 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 int	main(void)
 {
-	const char	*src = "Hello from the other side.";
-	char		dest[50];
-	char		ft_dest[50];
+	char	overlap[100] = "1234567890";
 
-	strcpy(dest,"You are so good....");
-	printf("Before: %s \n", dest);
-	memcpy(dest, src, strlen(src) + 1);
-	printf("After: %s\n", dest);
-	strcpy(ft_dest,"You are so good....");
-	printf("Before: %s \n", ft_dest);
-	ft_memcpy(ft_dest,src, strlen(src) +1);
-	printf("After: %s\n", ft_dest);
-	assert(strcmp(dest, ft_dest) == 0);
+	memmove(overlap + 2, overlap, 5);
+	printf("overlap: %s\n", overlap);
+	char ft_overlap[100]= "1234567890";
+	ft_memmove(ft_overlap +2, ft_overlap, 5);
+	printf("ft_overlap: %s\n",ft_overlap);
+	assert(strcmp(overlap, ft_overlap) == 0);
 	return (0);
 }
 */

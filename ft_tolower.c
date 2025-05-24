@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 18:52:06 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/24 19:40:13 by ptison           ###   ########.fr       */
+/*   Created: 2025/05/24 19:39:03 by ptison            #+#    #+#             */
+/*   Updated: 2025/05/24 19:43:09 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int ch)
+int	ft_tolower(int ch)
 {
-	if (ch >= 'a' && ch <= 'z')
+	if (ch >= 'A' && ch <= 'Z')
 	{
-		return (ch - 32);
+		return (ch + 32);
 	}
 	return (ch);
 }
@@ -26,16 +26,16 @@ int	ft_toupper(int ch)
 
 int	main(void)
 {
-	int	lower;
 	int	upper;
+	int	expected;
 	int	current;
 
-	lower = 'a';
-	upper = toupper(lower);
-	printf("expected --> small: %c  , big: %c \n", lower, upper);
-	current = ft_toupper(lower);
-	printf("current --> small: %c  , big: %c \n", lower, current);
-	assert(upper == current);
+	upper= 'Z';
+	expected = tolower(upper);
+	printf("expected --> big: %c  , small: %c \n", upper, expected);
+	current = ft_tolower(upper);
+	printf("current --> big: %c  , small: %c \n", upper, current);
+	assert(expected == current);
 	return (1);
 }
 */

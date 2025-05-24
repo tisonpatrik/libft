@@ -6,11 +6,13 @@
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:12:25 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/21 21:22:13 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/23 18:55:51 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stddef.h>
+
+size_t ft_strlen(char *str)
 {
 	int	i;
 

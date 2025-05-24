@@ -34,6 +34,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	return (i);
 }
 
+/*
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
@@ -62,4 +63,4 @@ int main(void)
 
     return 0;
 }
-
+*/

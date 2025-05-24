@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 16:45:34 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/24 19:04:59 by ptison           ###   ########.fr       */
+/*   Created: 2025/05/24 18:52:06 by ptison            #+#    #+#             */
+/*   Updated: 2025/05/24 19:00:45 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(unsigned char c)
+int	ft_toupper(int ch)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if (ch >= 'a' && ch <= 'z')
 	{
-		return (1024);
+		return ('a' - 32);
 	}
-	return (0);
+	return (ch);
 }
 
 /*
@@ -26,15 +26,16 @@ int	ft_isalpha(unsigned char c)
 
 int	main(void)
 {
-	unsigned char	c;
-	int				current;
-	int				expected;
+	int	lower;
+	int	upper;
+	int	current;
 
-	c = 'a';
-	current = ft_isalpha(c);
-	expected = isalpha(c);
-	assert(current == expected);
-	printf("passed \n");
-	return (0);
+	lower = 'a';
+	upper = toupper(lower);
+	printf("expected --> small: %c  , big: %c \n", lower, upper);
+	current = ft_toupper(lower);
+	printf("current --> small: %c  , big: %c \n", lower, current);
+	assert(upper == current);
+	return (1);
 }
 */

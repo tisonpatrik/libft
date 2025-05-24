@@ -6,13 +6,23 @@
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:12:25 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/23 18:55:51 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/24 19:02:19 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief Calculates the length of a null-terminated string.
+ *
+ * This function counts the number of characters in the given string,
+ * excluding the terminating null byte ('\0').
+ *
+ * @param str Pointer to the null-terminated string.
+ * @return The number of characters in the string.
+ */
+
 #include <stddef.h>
 
-size_t ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	int	i;
 

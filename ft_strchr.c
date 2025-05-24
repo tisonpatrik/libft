@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/23 13:22:24 by ptison            #+#    #+#             */
+/*   Created: 2025/05/24 19:46:37 by ptison            #+#    #+#             */
 /*   Updated: 2025/05/24 20:19:24 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char		*d;
-	const unsigned char	*s = (const unsigned char *)src;
-	size_t				i;
+	size_t	i;
 
 	i = 0;
-	d = (unsigned char *)dest;
-	if (d == s || n == 0)
-		return (dest);
-	if (d < s)
+	while (s[i])
 	{
-		while (i < n)
+		if (s[i] == (char)c)
 		{
-			d[i] = s[i];
-			i++;
+			return ((char *)&s[i]);
 		}
+		i++;
 	}
-	else
-	{
-		while (n--)
-			d[n] = s[n];
-	}
-	return (dest);
+	return (NULL);
 }
 
 /*
@@ -45,14 +35,18 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 int	main(void)
 {
-	char	overlap[100] = "1234567890";
+	char	*s;
+	int		c;
+	char	*expected;
+	char	*current;
 
-	memmove(overlap + 2, overlap, 5);
-	printf("overlap: %s\n", overlap);
-	char ft_overlap[100]= "1234567890";
-	ft_memmove(ft_overlap +2, ft_overlap, 5);
-	printf("ft_overlap: %s\n",ft_overlap);
-	assert(strcmp(overlap, ft_overlap) == 0);
-	return (0);
+	s = "Hello, my friend.";
+	c = 'f';
+	expected = strchr(s, c);
+	printf("expected: %s \n", expected);
+	current = ft_strchr(s, c);
+	printf("current: %s \n", current);
+	assert(expected == current);
+	return (1);
 }
 */

@@ -16,16 +16,16 @@ size_t	ft_strlen(const char *s);
 
 char	*ft_strrchr(const char *str, int c)
 {
-	size_t	size;
+	size_t	i;
 
-	size = ft_strlen(str);
-	while (str[size - 1])
+	i = ft_strlen(str);
+	while (1)
 	{
-		if (str[size] == (char)c)
-		{
-			return ((char *)&str[size]);
-		}
-		size--;
+		if (str[i] == (char)c)
+			return ((char *)&str[i]);
+		if (i == 0)
+			break ;
+		i--;
 	}
 	return (NULL);
 }
@@ -43,7 +43,7 @@ int	main(void)
 	char	*current;
 
 	s = "Hello, my friend.";
-	c = 'e';
+	c = 't' + 256;
 	expected = strrchr(s, c);
 	printf("expected: %s \n", expected);
 	current = ft_strrchr(s, c);

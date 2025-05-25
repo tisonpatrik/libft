@@ -25,6 +25,8 @@ char	*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
 	return (NULL);
 }
 
@@ -41,7 +43,7 @@ int	main(void)
 	char	*current;
 
 	s = "Hello, my friend.";
-	c = 'f';
+	c = 0;
 	expected = strchr(s, c);
 	printf("expected: %s \n", expected);
 	current = ft_strchr(s, c);

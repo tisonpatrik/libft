@@ -6,7 +6,7 @@
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 14:10:28 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/25 14:54:34 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/25 15:04:07 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_calloc(size_t nelem, size_t elsize)
 	total = nelem * elsize;
 	if (nelem == 0 || elsize == 0)
 	{
-		return malloc(1);
+		return (malloc(1));
 	}
 	if (total / nelem != elsize)
 	{
@@ -41,4 +41,3 @@ void	*ft_calloc(size_t nelem, size_t elsize)
 	}
 	return (ptr);
 }
-

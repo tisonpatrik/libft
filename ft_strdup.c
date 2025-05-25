@@ -6,19 +6,18 @@
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 14:57:20 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/25 14:58:32 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/25 15:03:43 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stddef.h>
 #include <stdlib.h>
-size_t	ft_strlen(const char *s);
 
+size_t	ft_strlen(const char *s);
 
 char	*ft_strdup(char *src)
 {
-	size_t		len;
+	size_t	len;
 	int		i;
 	char	*new_string;
 

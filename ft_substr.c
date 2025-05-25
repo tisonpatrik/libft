@@ -14,26 +14,23 @@
 #include <stdlib.h>
 
 size_t	ft_strlen(const char *str);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
 	size_t	len_of_str;
+	char	*dest;
 
-	if (!(start <= len))
-	{
+	if (!s)
 		return (NULL);
-	}
 	len_of_str = ft_strlen(s);
-	if (len < len_of_str)
-	{
+	if (start >= len_of_str)
+		return ((char *)malloc(1));
+	if (len > len_of_str - start)
+		len = len_of_str - start;
+	dest = malloc(len + 1);
+	if (!dest)
 		return (NULL);
-	}
-	str = malloc(len + 1 * sizeof(char));
-	while (s[start])
-	{
-		str[start] = s[start];
-		start++;
-	}
-	return (str);
+	ft_strlcpy(dest, s + start, len + 1);
+	return (dest);
 }

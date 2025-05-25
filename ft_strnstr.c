@@ -6,11 +6,30 @@
 /*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:18:42 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/24 21:46:27 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/25 13:42:47 by ptison           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stddef.h>
+
+int	within_len(size_t i, size_t j, size_t len)
+{
+	return ((i + j) < len);
+}
+
+int	not_null_terminated(const char *s, size_t index)
+{
+	return (s[index] != '\0');
+}
+
+int	chars_match(const char *big, const char *little, size_t i, size_t j)
+{
+	return (big[i + j] == little[j]);
+}
+
+int	is_little_ended(const char *little, size_t j)
+{
+	return (little[j + 1] == '\0');
+}
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -19,21 +38,18 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	if (little[0] == '\0')
-	{
 		return ((char *)big);
-	}
-	while (i < len && big[i] != '\0')
+	while (i < len && not_null_terminated(big, i))
 	{
 		j = 0;
-		while (big[i + j] != '\0' && big[i + j] == little[j])
+		while (within_len(i, j, len) && not_null_terminated(big, i + j)
+			&& chars_match(big, little, i, j))
 		{
-			if (little[j + 1] == '\0')
-			{
-				return ((char *)(&big[i]));
-			}
-			++j;
+			if (is_little_ended(little, j))
+				return ((char *)&big[i]);
+			j++;
 		}
-		++i;
+		i++;
 	}
 	return (NULL);
 }
@@ -45,13 +61,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 int	main(void)
 {
-	const char	*big = "Hello, my friend.";
-	const char	*little = "my";
+	const char	big[30] = "aaabcabcd";
+	const char	little[] = "cd";
 	size_t		len;
 	char		*expected;
 	char		*current;
 
-	len = 20;
+	len = 8;
 	expected = strnstr(big, little, len);
 	printf("expected: %s\n", expected);
 	current = ft_strnstr(big, little, len);

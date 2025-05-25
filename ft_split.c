@@ -12,92 +12,94 @@
 
 #include <stdlib.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-
-int	is_separator(char character, char separator)
-{
-	if (character == separator)
-	{
-		return (1);
-	}
-	return (0);
-}
-
-int	count_words(const char *string, char separator)
-{
-	int	i;
-	int	words;
-
-	i = 0;
-	words = 0;
-	while (string[i])
-	{
-		if (is_separator(string[i], separator))
-		{
-			words++;
-		}
-		i++;
-	}
-	return (words);
-}
-
-char	*word_splitter(const char *str, char sep)
-{
-	char	*word;
-	int		i;
-
-	i = 0;
-	while (str[i] && !is_separator(str[i], sep))
-	{
-		i++;
-	}
-	word = (char *)malloc(sizeof(char *) * (i + 1));
-	if (word == NULL)
-	{
-		return (NULL);
-	}
-	i = 0;
-	while (str[i] && !is_separator(str[i], sep))
-	{
-		word[i] = str[i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
-}
-
-void	split_words(const char *str, char c, char **words, int count_of_words)
+static int	count_words(const char *str, char c)
 {
 	int	i;
 	int	count;
 
 	i = 0;
 	count = 0;
-	while (count < count_of_words)
+	while (str[i])
 	{
-		if (is_separator(str[i], c))
-		{
-			words[count] = word_splitter(str, str[i]);
+		while (str[i] && str[i] == c)
+			i++;
+		if (str[i])
 			count++;
-		}
+		while (str[i] && str[i] != c)
+			i++;
+	}
+	return (count);
+}
+
+static char	*get_next_word(const char *str, char c, size_t *start)
+{
+	size_t	i;
+	size_t	word_len;
+	char	*word;
+
+	while (str[*start] && str[*start] == c)
+		(*start)++;
+	i = *start;
+	word_len = 0;
+	while (str[i] && str[i] != c)
+	{
+		word_len++;
 		i++;
 	}
-	words[count] = NULL;
+	word = (char *)malloc(sizeof(char) * (word_len + 1));
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < word_len)
+	{
+		word[i] = str[*start + i];
+		i++;
+	}
+	word[i] = '\0';
+	*start += word_len;
+	return (word);
+}
+
+static void	free_split(char **split, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**words;
-	int		count_of_words;
+	char	**result;
+	size_t	word_count;
+	size_t	i;
+	size_t	pos;
 
-	count_of_words = count_words(s, c);
-	words = (char **)malloc((count_of_words + 1) * sizeof(char));
-	if (!words)
-	{
+	if (!s)
 		return (NULL);
+	word_count = count_words(s, c);
+	result = (char **)malloc((word_count + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
+	i = 0;
+	pos = 0;
+	while (i < word_count)
+	{
+		result[i] = get_next_word(s, c, &pos);
+		if (!result[i])
+		{
+			free_split(result, i);
+			return (NULL);
+		}
+		i++;
 	}
-	split_words(s, c, words, count_of_words);
-	return (words);
+	result[i] = NULL;
+	return (result);
 }
 
 /*

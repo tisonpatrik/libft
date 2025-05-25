@@ -6,19 +6,20 @@
 /*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:09:45 by patrik            #+#    #+#             */
-/*   Updated: 2025/05/25 23:11:00 by patrik           ###   ########.fr       */
+/*   Updated: 2025/05/25 23:44:26 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
 
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
+		ft_putstr_fd("-2147483648", fd);
 		return ;
 	}
 	if (n < 0)

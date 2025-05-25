@@ -6,11 +6,13 @@
 /*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:08:45 by patrik            #+#    #+#             */
-/*   Updated: 2025/05/25 23:10:39 by patrik           ###   ########.fr       */
+/*   Updated: 2025/05/25 23:45:03 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	ft_putchar_fd(char c, int fd);
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -18,7 +20,7 @@ void	ft_putstr_fd(char *s, int fd)
 		return ;
 	while (*s)
 	{
-		write(fd, s, 1);
+		ft_putchar_fd(*s, fd);
 		s++;
 	}
 } 

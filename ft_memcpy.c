@@ -3,15 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 12:16:35 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/23 13:27:37 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 19:02:22 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
+/**
+ * @brief Copies memory area
+ *
+ * This function copies n bytes from memory area src to memory area dest.
+ * The memory areas must not overlap. Use ft_memmove if the memory areas
+ * do overlap. It mimics the behavior of the standard memcpy function.
+ *
+ * @param dest Pointer to the destination memory area
+ * @param src Pointer to the source memory area
+ * @param n Number of bytes to copy
+ * @return Pointer to dest
+ */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t				i;

@@ -3,13 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:18:42 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/25 13:42:47 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 19:09:12 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stddef.h>
+
 
 int	within_len(size_t i, size_t j, size_t len)
 {
@@ -31,6 +33,19 @@ int	is_little_ended(const char *little, size_t j)
 	return (little[j + 1] == '\0');
 }
 
+/**
+ * @brief Locates a substring in a string with length limit
+ *
+ * This function locates the first occurrence of the null-terminated string
+ * little in the string big, where not more than len characters are searched.
+ * Characters that appear after a '\0' character are not searched.
+ * It mimics the behavior of the BSD strnstr function.
+ *
+ * @param big The string to search in
+ * @param little The substring to search for
+ * @param len The maximum number of characters to search
+ * @return Pointer to the first occurrence of little, or NULL if not found
+ */
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;

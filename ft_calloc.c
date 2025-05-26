@@ -3,16 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 14:10:28 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/25 15:04:07 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 19:09:21 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 
+/**
+ * @brief Allocates and initializes memory to zero
+ *
+ * This function allocates memory for an array of nelem elements of elsize bytes
+ * each and returns a pointer to the allocated memory. The memory is set to zero.
+ * It mimics the behavior of the standard calloc function. If overflow would occur
+ * in the multiplication, the function returns NULL.
+ *
+ * @param nelem Number of elements to allocate
+ * @param elsize Size of each element in bytes
+ * @return Pointer to the allocated memory, or NULL if allocation fails
+ */
 void	*ft_calloc(size_t nelem, size_t elsize)
 {
 	size_t			total;

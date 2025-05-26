@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 01:07:06 by ptison            #+#    #+#             */
-/*   Updated: 2025/02/25 01:10:29 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 19:04:43 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,18 @@ static char	*get_next_word(const char *str, char c, size_t *start)
 	return (word);
 }
 
-static void	free_split(char **split, int count)
-{
-	int	i;
-
-	i = 0;
-	while (i < count)
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
-}
-
+/**
+ * @brief Splits a string into an array of strings using a delimiter
+ *
+ * This function allocates and returns an array of strings obtained by splitting
+ * the string 's' using the character 'c' as a delimiter. The array is terminated
+ * by a NULL pointer. Memory for the array and each string is obtained with malloc
+ * and can be freed with free.
+ *
+ * @param s The string to split
+ * @param c The delimiter character
+ * @return Array of strings resulting from the split, or NULL if allocation fails
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
@@ -93,7 +92,7 @@ char	**ft_split(char const *s, char c)
 		result[i] = get_next_word(s, c, &pos);
 		if (!result[i])
 		{
-			free_split(result, i);
+			free(result[i]);
 			return (NULL);
 		}
 		i++;

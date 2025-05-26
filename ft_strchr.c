@@ -6,12 +6,24 @@
 /*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 19:46:37 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/26 08:00:22 by patrik           ###   ########.fr       */
+/*   Updated: 2025/05/26 19:06:17 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
+/**
+ * @brief Locates the first occurrence of a character in a string
+ *
+ * This function returns a pointer to the first occurrence of the character c
+ * in the string s. The terminating null byte is considered part of the string,
+ * so if c is '\0', the function returns a pointer to the terminator.
+ * It mimics the behavior of the standard strchr function.
+ *
+ * @param s The string to search
+ * @param c The character to locate
+ * @return Pointer to the first occurrence of c, or NULL if not found
+ */
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;

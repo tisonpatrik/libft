@@ -6,13 +6,24 @@
 /*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:42:23 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/25 23:41:59 by patrik           ###   ########.fr       */
+/*   Updated: 2025/05/26 19:08:40 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <strings.h>
 
+/**
+ * @brief Sets the first n bytes of memory to zero
+ *
+ * This function sets the first n bytes of the memory area pointed to by str
+ * to zero (bytes containing '\0'). It mimics the behavior of the standard
+ * bzero function. This function is commonly used to initialize memory areas.
+ *
+ * @param str Pointer to the memory area to be zeroed
+ * @param n Number of bytes to set to zero
+ * @return Pointer to the memory area str
+ */
 void	*ft_bzero(void *str, size_t n)
 {
 	unsigned char	*s;

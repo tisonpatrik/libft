@@ -3,15 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 13:22:24 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/24 20:19:24 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 19:02:31 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
+/**
+ * @brief Copies memory area with overlap handling
+ *
+ * This function copies n bytes from memory area src to memory area dest.
+ * The memory areas may overlap: copying takes place as though the bytes
+ * in src are first copied into a temporary array that does not overlap
+ * with src or dest, and the bytes are then copied from the temporary
+ * array to dest. It mimics the behavior of the standard memmove function.
+ *
+ * @param dest Pointer to the destination memory area
+ * @param src Pointer to the source memory area
+ * @param n Number of bytes to copy
+ * @return Pointer to dest
+ */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*d;

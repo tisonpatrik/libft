@@ -6,7 +6,7 @@
 /*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 22:52:23 by patrik            #+#    #+#             */
-/*   Updated: 2025/05/25 22:56:46 by patrik           ###   ########.fr       */
+/*   Updated: 2025/05/26 19:00:23 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,16 @@ static int	get_len(int n)
 	return (len);
 }
 
+/**
+ * @brief Converts an integer to a string
+ *
+ * This function allocates and returns a string representing the integer
+ * received as an argument. Negative numbers are handled correctly.
+ * Memory for the new string is obtained with malloc and can be freed with free.
+ *
+ * @param n The integer to convert
+ * @return The string representing the integer, or NULL if allocation fails
+ */
 char	*ft_itoa(int n)
 {
 	char	*str;

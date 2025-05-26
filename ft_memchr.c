@@ -3,15 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 20:41:13 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/24 21:47:33 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 19:01:30 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
+/**
+ * @brief Searches for a character in a memory area
+ *
+ * This function scans the initial n bytes of the memory area pointed to by s
+ * for the first instance of c. Both c and the bytes of the memory area are
+ * interpreted as unsigned char. It mimics the behavior of the standard memchr function.
+ *
+ * @param s Pointer to the memory area to search
+ * @param c The character to search for (converted to unsigned char)
+ * @param n Number of bytes to search
+ * @return Pointer to the matching byte, or NULL if not found within n bytes
+ */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t				i;

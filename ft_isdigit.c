@@ -3,13 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 17:37:15 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/21 21:04:21 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:49:33 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief Tests if a character is a decimal digit
+ *
+ * This function checks if the given character is a decimal digit (0-9).
+ * It mimics the behavior of the standard isdigit function.
+ * Returns non-zero for characters '0' through '9', zero otherwise.
+ *
+ * @param i The character to test
+ * @return Non-zero if character is a digit, zero otherwise
+ */
 int	ft_isdigit(unsigned char i)
 {
 	if (i >= '0' && i <= '9')

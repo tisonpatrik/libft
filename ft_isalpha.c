@@ -3,13 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 16:45:34 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/24 19:04:59 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:49:25 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief Tests if a character is alphabetic
+ *
+ * This function checks if the given character is an alphabetic character.
+ * It mimics the behavior of the standard isalpha function.
+ * Returns non-zero for characters a-z and A-Z, zero otherwise.
+ *
+ * @param c The character to test
+ * @return Non-zero if character is alphabetic, zero otherwise
+ */
 int	ft_isalpha(unsigned char c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))

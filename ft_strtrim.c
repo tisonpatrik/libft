@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 17:23:42 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/25 17:23:49 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:51:44 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,18 @@ size_t	find_end(const char *s1, const char *set, size_t start)
 	return (pos);
 }
 
+/**
+ * @brief Trims characters from the beginning and end of a string
+ *
+ * This function allocates and returns a copy of the string 's1',
+ * with the characters specified in 'set' removed from the beginning
+ * and the end of the string. Memory for the new string is obtained
+ * with malloc and can be freed with free.
+ *
+ * @param s1 The string to be trimmed
+ * @param set The reference set of characters to trim
+ * @return The trimmed string, or NULL if the allocation fails
+ */
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t	start;

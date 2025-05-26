@@ -3,13 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 20:08:37 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/21 20:26:59 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:49:40 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief Tests if a character is alphanumeric
+ *
+ * This function checks if the given character is alphanumeric.
+ * It mimics the behavior of the standard isalnum function.
+ * Returns non-zero for characters a-z, A-Z, and 0-9, zero otherwise.
+ *
+ * @param c The character to test
+ * @return Non-zero if character is alphanumeric, zero otherwise
+ */
 int	ft_isalnum(unsigned char c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))

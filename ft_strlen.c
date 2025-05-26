@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:12:25 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/25 16:37:13 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:49:17 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @brief Calculates the length of a null-terminated string.
+ * @brief Calculates the length of a string
  *
- * This function counts the number of characters in the given string,
- * excluding the terminating null byte ('\0').
+ * This function counts the number of characters in a null-terminated string.
+ * It mimics the behavior of the standard strlen function.
+ * The function counts characters until it encounters the null terminator '\0'.
  *
- * @param str Pointer to the null-terminated string.
- * @return The number of characters in the string.
+ * @param str The string whose length is to be calculated
+ * @return The number of characters in the string (excluding null terminator)
  */
 
 #include <stddef.h>

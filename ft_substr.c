@@ -6,7 +6,7 @@
 /*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 16:24:31 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/25 23:30:48 by patrik           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:51:27 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 
+/**
+ * @brief Creates a substring from a string
+ *
+ * This function allocates and returns a substring from the string 's'.
+ * The substring begins at index 'start' and is of maximum size 'len'.
+ * Memory for the new string is obtained with malloc and can be freed with free.
+ *
+ * @param s The string from which to create the substring
+ * @param start The start index of the substring in the string 's'
+ * @param len The maximum length of the substring
+ * @return The substring, or NULL if the allocation fails
+ */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	len_of_str;

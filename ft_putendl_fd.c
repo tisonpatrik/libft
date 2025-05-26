@@ -6,7 +6,7 @@
 /*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:09:23 by patrik            #+#    #+#             */
-/*   Updated: 2025/05/25 23:42:15 by patrik           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:51:03 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 
 void	ft_putstr_fd(char *s, int fd);
 
+/**
+ * @brief Outputs a string to a file descriptor, followed by a newline
+ *
+ * This function writes a string to the specified file descriptor,
+ * followed by a newline character. It uses ft_putstr_fd to output
+ * the string. If the string is NULL, only a newline is output.
+ *
+ * @param s The string to output
+ * @param fd The file descriptor to write to
+ */
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s)

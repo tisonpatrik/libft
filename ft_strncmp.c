@@ -3,13 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 17:55:28 by ptison            #+#    #+#             */
-/*   Updated: 2025/02/13 18:29:59 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:50:20 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief Compares two strings up to n characters
+ *
+ * This function compares two strings lexicographically up to n characters.
+ * It mimics the behavior of the standard strncmp function.
+ * The comparison is done using unsigned characters.
+ *
+ * @param s1 The first string to compare
+ * @param s2 The second string to compare
+ * @param n The maximum number of characters to compare
+ * @return <0 if s1 is less than s2, 0 if equal, >0 if s1 is greater than s2
+ */
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned char	u1;

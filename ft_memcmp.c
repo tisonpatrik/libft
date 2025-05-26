@@ -3,15 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:13:37 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/24 21:17:00 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:52:09 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
+/**
+ * @brief Compares memory areas
+ *
+ * This function compares the first n bytes of the memory areas s1 and s2.
+ * It mimics the behavior of the standard memcmp function.
+ * The comparison is done using unsigned characters.
+ *
+ * @param s1 Pointer to first memory area
+ * @param s2 Pointer to second memory area
+ * @param n Number of bytes to compare
+ * @return <0 if s1 is less than s2, 0 if equal, >0 if s1 is greater than s2
+ */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*ptr1;

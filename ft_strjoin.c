@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:32:39 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/25 16:46:44 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:51:36 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,18 @@ size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t dsize);
 
-char	*ft_strjoin(char *s1, char *s2)
+/**
+ * @brief Concatenates two strings
+ *
+ * This function allocates and returns a new string, which is the result
+ * of the concatenation of 's1' and 's2'. Memory for the new string is
+ * obtained with malloc and can be freed with free.
+ *
+ * @param s1 The prefix string
+ * @param s2 The suffix string
+ * @return The new concatenated string, or NULL if the allocation fails
+ */
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len_s1;
 	size_t	len_s2;

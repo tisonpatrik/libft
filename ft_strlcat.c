@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 18:42:24 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/24 19:04:35 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:50:38 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 
 size_t	ft_strlen(const char *s);
 
+/**
+ * @brief Concatenate string to a specific size
+ *
+ * This function appends the src string to the dest string,
+ * overwriting the terminating null byte at the end of dest,
+ * and then adds a terminating null byte. The strings may not overlap.
+ * It mimics the behavior of the BSD strlcat function.
+ *
+ * @param dest The destination buffer
+ * @param src The source string
+ * @param dsize The size of the destination buffer
+ * @return The total length of the string tried to create
+ */
 size_t	ft_strlcat(char *dest, const char *src, size_t dsize)
 {
 	size_t	i;

@@ -3,13 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 18:52:06 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/24 19:40:13 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:50:03 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief Converts a character to uppercase
+ *
+ * This function converts a lowercase letter to its uppercase equivalent.
+ * It mimics the behavior of the standard toupper function.
+ * If the character is not a lowercase letter, it is returned unchanged.
+ *
+ * @param ch The character to convert
+ * @return The uppercase equivalent if ch is lowercase, ch otherwise
+ */
 int	ft_toupper(int ch)
 {
 	if (ch >= 'a' && ch <= 'z')

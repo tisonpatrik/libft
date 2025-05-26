@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 14:57:20 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/25 15:03:43 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:51:18 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,32 @@
 
 size_t	ft_strlen(const char *s);
 
-char	*ft_strdup(char *src)
+/**
+ * @brief Duplicates a string
+ *
+ * This function creates a new string which is a duplicate of the string s.
+ * Memory for the new string is obtained with malloc, and can be freed with free.
+ * It mimics the behavior of the standard strdup function.
+ *
+ * @param s The string to duplicate
+ * @return A pointer to the duplicated string, or NULL if insufficient memory
+ */
+char	*ft_strdup(const char *s)
 {
 	size_t	len;
 	int		i;
 	char	*new_string;
 
-	len = ft_strlen(src);
+	len = ft_strlen(s);
 	new_string = malloc(len + 1 * sizeof(char));
 	if (new_string == NULL)
 	{
 		return (NULL);
 	}
 	i = 0;
-	while (src[i])
+	while (s[i])
 	{
-		new_string[i] = src[i];
+		new_string[i] = s[i];
 		i++;
 	}
 	new_string[i] = '\0';

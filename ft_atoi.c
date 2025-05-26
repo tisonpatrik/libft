@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptison <ptison@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:49:31 by ptison            #+#    #+#             */
-/*   Updated: 2025/05/24 21:58:09 by ptison           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:48:03 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,21 @@ int	convert_number(const char *str, int idx)
 	return (res);
 }
 
+/**
+ * @brief Converts a string to an integer (atoi)
+ *
+ * This function mimics the behavior of the standard atoi function.
+ * It converts a string representation of a number to its integer value.
+ * The function:
+ * 1. Skips leading whitespace
+ * 2. Handles optional '+' or '-' sign
+ * 3. Converts consecutive digits to integer
+ * 4. Ignores any trailing non-digit characters
+ *
+ * @param str The string to convert
+ * @return The converted integer value
+ *         0 if the string doesn't start with a valid number
+ */
 int	ft_atoi(const char *str)
 {
 	int	idx;

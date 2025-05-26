@@ -6,7 +6,7 @@
 /*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:09:45 by patrik            #+#    #+#             */
-/*   Updated: 2025/05/25 23:44:26 by patrik           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:59:59 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 
+/**
+ * @brief Outputs an integer to a file descriptor
+ *
+ * This function writes an integer to the specified file descriptor.
+ * It handles negative numbers and the minimum integer value correctly.
+ * The number is converted to a string and output digit by digit.
+ *
+ * @param n The integer to output
+ * @param fd The file descriptor to write to
+ */
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)

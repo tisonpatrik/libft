@@ -6,7 +6,7 @@
 /*   By: patrik <patrik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:03:24 by patrik            #+#    #+#             */
-/*   Updated: 2025/05/25 23:03:27 by patrik           ###   ########.fr       */
+/*   Updated: 2025/05/26 07:51:53 by patrik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,18 @@
 
 size_t	ft_strlen(const char *s);
 
+/**
+ * @brief Applies a function to each character of a string with index
+ *
+ * This function creates a new string resulting from successive applications
+ * of function 'f' to each character of string 's', passing its index as
+ * first argument. Memory for the new string is obtained with malloc and
+ * can be freed with free.
+ *
+ * @param s The string on which to iterate
+ * @param f The function to apply to each character and its index
+ * @return The string created from successive applications of 'f'
+ */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*result;

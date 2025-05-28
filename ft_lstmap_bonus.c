@@ -23,7 +23,10 @@
  *
  * @param lst The address of a pointer to a node
  * @param f The address of the function applied to each node's content
- * @param del The address of the function used to delete a node's content if needed
+
+
+	* @param del The address of the function used to delete
+	* a node's content if needed
  * @return The new list, or NULL if the allocation fails
  */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
@@ -49,4 +52,4 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		lst = (*lst).next;
 	}
 	return (new_list);
-} 
+}

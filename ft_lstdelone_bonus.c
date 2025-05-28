@@ -16,12 +16,15 @@
 /**
  * @brief Deletes and frees a single node
  *
- * This function takes a node as parameter and frees its content using
- * the function 'del'. It then frees the node itself but does NOT free
+ * This function takes a node as parameter 
+ * and frees its content using
+ * the function 'del'. It then frees the 
+ * node itself but does NOT free
  * the next node.
  *
  * @param lst The node to free
- * @param del The address of the function used to delete the content
+ * @param del The address of the function 
+ * used to delete the content
  */
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
@@ -29,4 +32,4 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		return ;
 	del((*lst).content);
 	free(lst);
-} 
+}

@@ -12,7 +12,6 @@
 
 #include <stddef.h>
 
-
 int	within_len(size_t i, size_t j, size_t len)
 {
 	return ((i + j) < len);

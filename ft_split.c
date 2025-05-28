@@ -63,14 +63,20 @@ static char	*get_next_word(const char *str, char c, size_t *start)
 /**
  * @brief Splits a string into an array of strings using a delimiter
  *
- * This function allocates and returns an array of strings obtained by splitting
- * the string 's' using the character 'c' as a delimiter. The array is terminated
- * by a NULL pointer. Memory for the array and each string is obtained with malloc
+ * This function allocates and returns an array of strings 
+ * obtained by splitting
+
+	* the string 's' using the character 'c' as a delimiter. 
+	* The array is terminated
+
+	* by a NULL pointer. 
+	* Memory for the array and each string is obtained with malloc
  * and can be freed with free.
  *
  * @param s The string to split
  * @param c The delimiter character
- * @return Array of strings resulting from the split, or NULL if allocation fails
+ * @return Array of strings resulting from the split,
+	or NULL if allocation fails
  */
 char	**ft_split(char const *s, char c)
 {

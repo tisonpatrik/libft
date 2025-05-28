@@ -16,8 +16,10 @@
 /**
  * @brief Creates a new list node
  *
- * This function allocates memory for a new node and initializes it.
- * The 'content' member variable is initialized with the given parameter.
+ * This function allocates memory for 
+ * a new node and initializes it.
+ * The 'content' member variable is 
+ * initialized with the given parameter.
  * The 'next' variable is initialized to NULL.
  *
  * @param content The content to store in the new node
@@ -33,4 +35,4 @@ t_list	*ft_lstnew(void *content)
 	(*new_node).content = content;
 	(*new_node).next = NULL;
 	return (new_node);
-} 
+}

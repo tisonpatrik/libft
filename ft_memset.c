@@ -16,8 +16,10 @@
  * @brief Fills memory with a constant byte
  *
  * This function fills the first n bytes of the memory area pointed to by str
- * with the constant byte c. It mimics the behavior of the standard memset function.
- * This function is commonly used to initialize memory areas with a specific value.
+ * with the constant byte c. 
+ * It mimics the behavior of the standard memset function.
+ * This function is commonly used to initialize memory areas 
+ * with a specific value.
  *
  * @param str Pointer to the memory area to fill
  * @param c The byte value to fill with (converted to unsigned char)
@@ -57,10 +59,8 @@ int	main(void)
 	str = "Hello from the other side.";
 	strcpy(expected, str);
 	memset(expected, c, i);
-	
 	strcpy(current, str);
 	ft_memset(current, c, i);
-	
 	printf("e: %s \n", expected);
 	printf("c: %s \n", current);
 	assert(strcmp(current, expected) == 0);

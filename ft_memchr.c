@@ -17,7 +17,9 @@
  *
  * This function scans the initial n bytes of the memory area pointed to by s
  * for the first instance of c. Both c and the bytes of the memory area are
- * interpreted as unsigned char. It mimics the behavior of the standard memchr function.
+
+	* interpreted as unsigned char.
+	* It mimics the behavior of the standard memchr function.
  *
  * @param s Pointer to the memory area to search
  * @param c The character to search for (converted to unsigned char)

@@ -20,7 +20,7 @@
  * @param s The string on which to iterate
  * @param f The function to apply to each character and its index
  */
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 

@@ -17,8 +17,12 @@
  * @brief Allocates and initializes memory to zero
  *
  * This function allocates memory for an array of nelem elements of elsize bytes
- * each and returns a pointer to the allocated memory. The memory is set to zero.
- * It mimics the behavior of the standard calloc function. If overflow would occur
+
+	* each and returns a pointer to the allocated memory. 
+	* The memory is set to zero.
+
+	* It mimics the behavior of the standard calloc function. 
+	* If overflow would occur
  * in the multiplication, the function returns NULL.
  *
  * @param nelem Number of elements to allocate

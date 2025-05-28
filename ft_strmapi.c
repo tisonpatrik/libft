@@ -45,3 +45,30 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = '\0';
 	return (result);
 }
+
+/*
+#include <ctype.h>
+#include <stdio.h>
+
+char	to_upper_wrapper(unsigned int i, char c)
+{
+	(void)i;
+	return (char)toupper((unsigned char)c);
+}
+
+int	main(void)
+{
+	char	*str;
+	char	*result;
+
+	str = "Hello";
+	result = ft_strmapi(str, to_upper_wrapper);
+	if (result)
+	{
+		printf("Original: %s\n", str);
+		printf("Mapped:   %s\n", result);
+		free(result);
+	}
+	return (0);
+}
+*/

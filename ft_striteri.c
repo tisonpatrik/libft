@@ -33,3 +33,29 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
+
+/*
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void	to_upper_iter(unsigned int i, char *c)
+{
+	(void)i;
+	*c = (char)toupper((unsigned char)*c);
+}
+
+int	main(void)
+{
+	char	*str = strdup("Hello");
+	if (!str)
+		return (1);
+
+	printf("Original: %s\n", str);
+	ft_striteri(str, to_upper_iter);
+	printf("Mapped:   %s\n", str);
+	free(str);
+	return (0);
+}
+*/

@@ -52,3 +52,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(dest, s + start, len + 1);
 	return (dest);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*str;
+	size_t	len;
+	char	*sub;
+
+	str = "Hello my friend, do you have a nice day?";
+	unsigned int start= 17;
+	len = 25;
+	sub = ft_substr(str, start, len);
+	printf("sub: %s \n", sub);
+}
+*/

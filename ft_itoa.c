@@ -61,3 +61,17 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
+
+/*
+#include <unistd.h>
+int main(void)
+{
+	int n = 666;
+	char *str = ft_itoa(n);
+	for(int i=0; str[i]; i++ )
+	{
+		write(1, &str[i], 1);
+	}
+	write(1, "\n", 1);
+}
+*/

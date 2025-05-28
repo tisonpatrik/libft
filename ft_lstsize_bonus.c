@@ -33,3 +33,31 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int	main(void)
+{
+	char	*content1;
+	char	*content2;
+	t_list	*node1;
+	t_list	*node2;
+	t_list	*head;
+	int		count;
+
+	content1 = "lst";
+	content2 = "new";
+	node1 = ft_lstnew(content1);
+	node2 = ft_lstnew(content2);
+	head = node1;
+	ft_lstadd_front(&head, node2);
+	count = ft_lstsize(head);
+	printf("count: %d \n", count);
+	// Clean up
+	free(node1);
+	free(node2);
+	return (0);
+}
+*/

@@ -33,3 +33,36 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	del((*lst).content);
 	free(lst);
 }
+
+/*
+#include<stdio.h>
+void	del_content(void *content)
+{
+	(void)content;
+}
+
+int	main(void)
+{
+	t_list *node1 = ft_lstnew("one");
+	t_list *node2 = ft_lstnew("two");
+	t_list *node3 = ft_lstnew("three");
+
+	t_list *head = node1;
+	ft_lstadd_front(&head, node2); // head = node2
+	ft_lstadd_front(&head, node3); // head = node3
+
+	ft_lstdelone(node2, del_content);
+	node3->next = node1;
+
+	while (head)
+	{
+		printf("Node: %s\n", (char *)head->content);
+		head = head->next;
+	}
+
+	// Clean up
+	free(node1);
+	free(node3);
+	return 0;
+}
+*/

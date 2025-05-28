@@ -35,3 +35,31 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	last = ft_lstlast(*lst);
 	(*last).next = new;
 }
+
+/*
+t_list	*ft_lstnew(void *content);
+#include <stdio.h>
+#include <stdlib.h>
+
+int	main(void)
+{
+	char	*content1;
+	char	*content2;
+	t_list	*node1;
+	t_list	*node2;
+	t_list	*head;
+
+	content1 = "head";
+	content2 = "new";
+	node1 = ft_lstnew(content1);
+	node2 = ft_lstnew(content2);
+	head = node1;
+	ft_lstadd_back(&head, node2);
+	printf("1st node content: %s\n", (char *)head->content);
+	printf("2nd node content: %s\n", (char *)head->next->content);
+	// Clean up
+	free(node1);
+	free(node2);
+	return (0);
+}
+*/
